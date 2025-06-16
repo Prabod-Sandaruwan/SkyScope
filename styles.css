@@ -11,7 +11,8 @@
   padding:0;
 }
 body{
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   font-family: 'Poppins', sans-serif;
 }
 
