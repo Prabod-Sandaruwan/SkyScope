@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SkyScope</title>
+        <meta name="author" content="Sandaru Hapudeniya">
+        <meta name="keywords" content="weather, SkyScope, SkyScope App, Prabod Sandaruwan, Sandaruwan Hapudeniya, forecast, weather app, real-time weather, weather Sri Lanka, air quality, skyscopeapp">
+        <meta name="description" content="Get accurate local weather updates, forecasts, and temperature reports instantly with SkyScope...your daily weather companion.">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <section class="landpage">
+                <p class="landing_page_text"><span class="title_span">Sky</span>Scope</p>
+                <p class="landingpage_des">Get accurate and up-to-date local weather forecasts anytime you need them.</p>
+                <div class="btn_div">
+                    <button class="start_btn" onclick="slideUp()">Discover</button>
+                </div>
+        </section>
+        <section class="main_page">
+            <nav class="nav_bar">
+                <button onclick="alert('About SkyScope\n\nSkyScope is your friendly weather companion, providing accurate and up-to-date weather information wherever you are. Whether you want to check the temperature, wind speed, air quality, or get detailed forecasts, SkyScope delivers reliable data with a clean and easy-to-use interface.\n\nOur goal is to make checking the weather simple, fast, and enjoyable. Using trusted weather APIs, SkyScope helps you plan your day, stay safe, and stay informed about changing conditions in your city and beyond.\n\nExplore SkyScope — the sky is always in your hands!')"><i class="fa-solid fa-circle-info"></i></button>
+                <button onclick="alert('This feature is under development and will be available in a future update.')"><i class="fa-solid fa-gears"></i></button>
+                <button onclick="alert('Features\n\nCurrent temperature and weather conditions\nDaily forecasts\nAir quality index\nWind spee\nHumidity percentage\nUser-friendly interface with responsive design\nSearch functionality for cities worldwide')"><i class="fa-solid fa-scroll"></i></button>
+                <button onclick="alert('Contact Me\n\nEmail: prabodsandaruwan_backup@gmail.com\nPhone: +94 77 37 43 332\nTelegram : t.me/prabodsandaruwan\nLinkedIn : www.linkedin.com/in/sandaruwan-hapudeniya\nGitHub : https://github.com/Prabod-Sandaruwan\n\nLocation: Colombo, Sri Lanka')"><i class="fa-solid fa-address-card"></i></button>
+            </nav>
+            <div class="main_information">
+                <div class="search_bar">
+                    <input id="city" type="text" placeholder="enter city name here">
+                    <button id="searchBtn" onclick="getWeather()">
+                        <i class="fa-solid fa-magnifying-glass-location"></i>
+                    </button>
+                </div>
+                <hr class="colored-line">
+                <div class="main_infor">
+                    <div class="main_info_text">
+                        <p class="city_name" id="city_name"></p>
+                        <p class="state" id="state"></p>
+                        <p class="last_update" id="time"></p>
+                        <p class="temp"></p>
+                    </div>
+                    <div class="main_info_image">
+                        <img id="img1" src="images/dafault.png" alt="">
+                    </div>
+                </div>
+                <div class="other_details_top">
+                    <div class="other_details">
+                        <div class="other_topic">
+                            <i class="fa-solid fa-temperature-high"></i>
+                            <p class="other_topc_text">Feels Like</p>
+                        </div>
+                        <p id="temp_data" class="small_datas"></p>
+                    </div>
+                    <div class="other_details">
+                        <div class="other_topic">
+                            <i class="fa-solid fa-wind"></i>
+                            <p class="other_topc_text">Wind</p>
+                        </div>
+                        <p id="wind_data" class="small_datas"></p>
+                    </div>
+                </div>
+                <div class="other_details_bottom">
+                    <div class="other_details">
+                        <div class="other_topic">
+                            <i class="fa-solid fa-droplet"></i>
+                            <p class="other_topc_text">Humidity (%)</p>
+                        </div>
+                        <p id="humiduty_data" class="small_datas"></p>
+                    </div>
+                    <div class="other_details">
+                        <div class="other_topic">
+                            <i class="fa-solid fa-sun"></i>
+                            <p class="other_topc_text">UV Index</p>
+                        </div>
+                        <p id="uv_data" class="small_datas"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="main_description">
+                <div class="free_space"></div>
+                <div class="description_area">
+                    <p class="desc_area_topc">Information</p>
+                    <hr class="desc_hr">
+                    <p id="desc" class="descrip_sentence">Discover real-time weather info - just enter a city to begin.</p>
+                    <hr class="desc_hr2">
+                    <p class="air_head">Local Air Quality</p>
+                    <div class="air_details">
+                        <table>
+                             <tr>
+                                <td>Carbon Monoxide (CO)</td>
+                                <td class="air_data"><span id="co"></span> µg/m³</td>
+                                </tr>
+                             <tr>
+                                <td>Nitrogen Dioxide (NO₂)</td>
+                                <td class="air_data"><span id="no2"></span> µg/m³</td>
+                            </tr>
+                            <tr>
+                                <td>Ozone (O₃)</td>
+                                <td class="air_data"><span id="o3"></span> µg/m³</td>
+                            </tr>
+                            <tr>
+                                <td>Sulfur Dioxide (SO₂)</td>
+                                <td class="air_data"><span id="so2"></span> µg/m³</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="footer">
+                        <p class="foter_text">Powered By: OpenWeatherMap, WeatherAPI</p>
+                        <p class="foter_text">© 2025 SkyScope. Developed by Prabod Sandaruwan. All rights reserved.</p>
+                    </div>
+                    <div class="contact">
+                        <p class="contact_text">Reach Out</p>
+                        <div class="contact_links">
+                            <a href="https://github.com/Prabod-Sandaruwan"><i class="fa-brands fa-github"></i></a>
+                            <a href="www.linkedin.com/in/sandaruwan-hapudeniya"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="prabodsandaruwan_backup@gmail.com"><i class="fa-solid fa-at"></i></a>
+                            <a href="t.me/prabod_sandaruwan"><i class="fa-brands fa-telegram"></i></a>
+                        </div>
+                        <p class="version">version : 1.0.0</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="script.js"></script>
+    </body>
+</html>
