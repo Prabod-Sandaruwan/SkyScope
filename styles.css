@@ -11,6 +11,7 @@
   padding:0;
 }
 body{
+  overflow: hidden;
   overflow-x: hidden;
   overflow-y: auto;
   font-family: 'Poppins', sans-serif;
@@ -115,6 +116,7 @@ body{
     font-size: 4vw;
     width: 50%;
     height: 6%;
+    margin-bottom: 30px;
   }
 
   .btn_div {
@@ -391,6 +393,11 @@ td{
     flex-direction: column;
     margin: 10px auto;
   }
+  #img1{
+  height: 25vh;
+  filter: drop-shadow(5px 5px 20px rgba(51, 92, 196, 0.564));
+  transition: opacity 0.5s ease-in-out;
+}
     #city {
     width: 100%;
   }
@@ -439,7 +446,11 @@ td{
     flex-wrap: wrap;
     gap: 10px;
   }
+  .temp{
+    font-size: 4rem;
+  }
 }
+
 .version{
   text-align: center;
   margin-top: 5px;

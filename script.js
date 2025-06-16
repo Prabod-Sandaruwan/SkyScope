@@ -54,10 +54,10 @@ async function getWeather() {
   else if (condition === "Clear") {
     weatherImg.src = "icon images/clear-night.png";
     text.textContent = "🌌 It’s a clear and quiet night. Stars are likely to be visible 🌟, and the fresh breeze may bring a soothing atmosphere 🌬️. A wonderful night to unwind or reflect in peace.";}
-  else if (condition === "Partly cloudy" && is_day == 1) {
+  else if (condition === "Partly Cloudy" && is_day == 1) {
     weatherImg.src = "icon images/partly cloud-day.png";
     text.textContent = "🌥️ Sunshine peeks through scattered clouds, creating a gentle balance of warmth and shade. It’s a lovely day to be outside without the harshness of full sun 😌";}
-  else if (condition === "Partly cloudy" && is_day == 0) {
+  else if (condition === "Partly Cloudy" && is_day == 0) {
     weatherImg.src = "icon images/cloudy-night.png";
     text.textContent = "🌙 A cloudy blanket covers the night sky, dimming the moonlight 🌘. It’s a quiet and calm atmosphere — perfect for a restful night in 💤.";}
   else if (condition === "Overcast" && is_day == 1) {
